@@ -66,3 +66,28 @@ print(http.read_response())
 # Terminate the HTTP service
 http.terminate()
 ```
+# SMS
+```
+from sim900_library import SIM900, SMS
+
+# Initialize the SIM900 module
+sim900 = SIM900(uart_id=1, tx_pin=17, rx_pin=16)
+
+# Initialize the SMS class with the SIM900 instance
+sms = SMS(sim900)
+
+# Send an SMS
+sms.send_sms('1234567890', 'Hello, blue papers please!')
+
+# Read an SMS at index 1
+print(sms.read_sms(1))
+
+# Delete an SMS at index 1
+sms.delete_sms(1)
+
+# Read all SMS messages
+print(sms.read_all_sms())
+
+# Delete all SMS messages
+sms.delete_all_sms()
+```

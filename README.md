@@ -18,7 +18,7 @@ This MicroPython library for managing various functionalities of the SIM900 GSM/
 2. **Import the library** into your MicroPython script.
 
 ```python
-from sim900_library import SIM900, GPRS
+from sim900 import SIM900, GPRS
 
 # Initialize the SIM900 module
 sim900 = SIM900(uart_id=1, tx_pin=17, rx_pin=16)

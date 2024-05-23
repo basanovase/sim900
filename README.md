@@ -42,7 +42,7 @@ gprs.disconnect()
 ```
 # HTTP
 ```python
-from sim900_library import SIM900, HTTP
+from sim900 import SIM900, HTTP
 
 # Initialize the SIM900 module
 sim900 = SIM900(uart_id=1, tx_pin=17, rx_pin=16)

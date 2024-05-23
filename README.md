@@ -67,8 +67,8 @@ print(http.read_response())
 http.terminate()
 ```
 # SMS
-```
-from sim900_library import SIM900, SMS
+``` python
+from sim900 import SIM900, SMS
 
 # Initialize the SIM900 module
 sim900 = SIM900(uart_id=1, tx_pin=17, rx_pin=16)

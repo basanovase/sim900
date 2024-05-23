@@ -16,7 +16,7 @@ This MicroPython library for managing various functionalities of the SIM900 GSM/
 ## Installation
 1. **Copy the library files** to your MicroPython device.
 2. **Import the library** into your MicroPython script.
-
+#GPRS
 ```python
 from sim900 import SIM900, GPRS
 
@@ -39,4 +39,30 @@ else:
 
 # Disconnect from GPRS
 gprs.disconnect()
+```
+#HTTP
+```python
+from sim900_library import SIM900, HTTP
+
+# Initialize the SIM900 module
+sim900 = SIM900(uart_id=1, tx_pin=17, rx_pin=16)
+
+# Initialize the HTTP class with the SIM900 instance
+http = HTTP(sim900)
+
+# Initialize the HTTP service
+http.initialize()
+
+# Set URL and content type for the HTTP request
+http.set_param("URL", "http://example.com")
+http.set_param("CONTENT", "application/json")
+
+# Perform an HTTP GET request
+response = http.execute_method('GET')
+
+# Read the HTTP response
+print(http.read_response())
+
+# Terminate the HTTP service
+http.terminate()
 ```
